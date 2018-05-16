@@ -102,6 +102,7 @@ export class ParametrosController {
         @Res() response
     ) {
         const nombreCookie = request.params.nombre;
+        console.log(request.cookies[nombreCookie]);
         const existeCookie = request.cookies[nombreCookie];
         if (existeCookie) {
             return response.send({
