@@ -26,6 +26,7 @@
     "@nestjs/typeorm": "^3.0.0",
     "@nestjs/websockets": "^5.0.0",
     "cookie-parser": "^1.4.3",
+    "jsonwebtoken": "^8.2.2",
     "mysql": "^2.15.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0",

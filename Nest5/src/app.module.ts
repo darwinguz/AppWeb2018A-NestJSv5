@@ -7,6 +7,8 @@ import {ParametrosController} from "./parametros.controller";
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {UsuarioEntity} from "./usuario/usuario.entity";
 import {FotoEntity} from "./foto/foto.entity";
+import {JwtService} from "./servicios/jwt.service";
+import {AuthController} from "./auth/auth.controller";
 
 @Module({
     imports: [
@@ -28,11 +30,13 @@ import {FotoEntity} from "./foto/foto.entity";
     controllers: [
         AppController,
         UsuarioController,
-        ParametrosController
+        ParametrosController,
+        AuthController
     ],
     providers: [
         AppService,
-        UsuarioService
+        UsuarioService,
+        JwtService
     ],
 })
 export class AppModule {
