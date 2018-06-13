@@ -9,6 +9,7 @@ import {UsuarioEntity} from "./usuario/usuario.entity";
 import {FotoEntity} from "./foto/foto.entity";
 import {JwtService} from "./servicios/jwt.service";
 import {AuthController} from "./auth/auth.controller";
+import {JwtGuard} from "./guards/jwt.guard";
 
 @Module({
     imports: [
@@ -36,7 +37,8 @@ import {AuthController} from "./auth/auth.controller";
     providers: [
         AppService,
         UsuarioService,
-        JwtService
+        JwtService,
+        JwtGuard
     ],
 })
 export class AppModule {
