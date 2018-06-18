@@ -21,8 +21,20 @@ export class AuthController {
                 };
                 const respuestaToken = {
                     jwt: this._jwtService.emitirToken(payload)
-                }
-                return respuestaToken;
+                };
+                //leer la cabecera para retornar html o JSON
+                return ` 
+                <html>
+                <head>
+                <title>Inicio</title>
+                </head>
+                <body>
+                <h1>Bienvenido al Sistema</h1>
+                <p>Su token es ${respuestaToken.jwt}</p>
+                </body>
+                </html>
+                `;
+
             } else {
                 throw new BadRequestException({
                     mensaje: 'Credenciales invalidas'
@@ -37,7 +49,7 @@ export class AuthController {
 
     @Post('verificarJWT')
     @HttpCode(200)
-    verificarJWT(@Body('jwt') jwt: string,) : any{
+    verificarJWT(@Body('jwt') jwt: string,): any {
         const tieneParametros = jwt;
         if (tieneParametros) {
             this._jwtService.verificarToken(jwt, (error, data) => {
